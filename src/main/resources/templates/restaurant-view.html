@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="mt-5"  th:text="${restaurant.name}" />
+    <h1 class="mt-5" th:text="${restaurant.name}"></h1>
     <ul class="nav">
         <li class="nav-item">
             <a type="button" class="btn btn-primary" aria-current="page" th:href="${'/restaurants/' + restaurant.id + '/create-menu-item'}">Add Menu Item</a>
@@ -22,11 +22,12 @@
         <li th:each="item: ${restaurant.menuItems}" class="list-group-item">
             <div class="row">
                 <div class="col-md-6">
-                    <h5 th:text="${item.name}"/>
-                    <p th:text="${item.description}"/>
+                    <h5 th:text="${item.name}"></h5>
+                    <p th:text="${item.description}"></p>
                 </div>
                 <div class="col-md-6 text-right">
-                    <span th:text="${'Price: ' + item.price}"/>
+                    <span th:text="${'Price: ' + item.price}"></span>
+                    <a th:href="${'/restaurants/menu-item/' + item.id + '/edit'}" class="btn btn-secondary btn-sm ml-2">Edit</a>
                 </div>
             </div>
         </li>
@@ -34,3 +35,7 @@
 </div>
 </body>
 </html>
+
+
+
+

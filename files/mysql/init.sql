@@ -17,57 +17,73 @@ CREATE TABLE menu_item (
 );
 
 
+-- Restaurants
 INSERT INTO restaurant (name, email)
 VALUES
-    ('Cafe Delight', 'cafedelight@example.com'),
-    ('Sushi Sensation', 'sushisensation@example.com'),
-    ('Gourmet Grill', 'gourmetgrill@example.com'),
-    ('Taco Ring', 'tacoring@example.com'),
-    ('Bistro Bliss', 'bistrobliss@example.com');
+    ('Desi Delight', 'desidelight@example.com'),
+    ('Spicy Sensation', 'spicysensation@example.com'),
+    ('Tandoori Grill', 'tandoorigrill@example.com'),
+    ('Taco Mahal', 'tacomahal@example.com'),
+    ('Biryani Bliss', 'biryanibliss@example.com');
 
 -- Menu items for Restaurant 1
 INSERT INTO menu_item (name, description, image_link, restaurant_id, price)
 VALUES
-    ('Burger', 'Delicious beef burger', 'https://example.com/burger.jpg', 1, 10.99),
-    ('Pizza', 'Tasty pepperoni pizza', 'https://example.com/pizza.jpg', 1, 12.49),
-    ('Pasta', 'Creamy Alfredo pasta', 'https://example.com/pasta.jpg', 1, 9.99),
-    ('Salad', 'Fresh garden salad', 'https://example.com/salad.jpg', 1, 7.99),
-    ('Soda', 'Refreshing cola', 'https://example.com/soda.jpg', 1, 2.49);
+    ('Paneer Tikka', 'Grilled paneer with spices', 'https://example.com/paneertikka.jpg', 1, 250.00),
+    ('Butter Naan', 'Soft and buttery naan', 'https://example.com/butternaan.jpg', 1, 40.00),
+    ('Dal Makhani', 'Rich lentil curry', 'https://example.com/dalmakhani.jpg', 1, 180.00),
+    ('Chole Bhature', 'Spicy chickpeas with fried bread', 'https://example.com/cholebhature.jpg', 1, 150.00),
+    ('Lassi', 'Refreshing yogurt drink', 'https://example.com/lassi.jpg', 1, 60.00);
 
 -- Menu items for Restaurant 2
 INSERT INTO menu_item (name, description, image_link, restaurant_id, price)
 VALUES
-    ('Sushi', 'Assorted sushi platter', 'https://example.com/sushi.jpg', 2, 18.99),
-    ('Tempura', 'Crispy tempura shrimp', 'https://example.com/tempura.jpg', 2, 14.99),
-    ('Teriyaki Chicken', 'Grilled chicken with teriyaki sauce', 'https://example.com/teriyaki.jpg', 2, 15.99),
-    ('Miso Soup', 'Traditional Japanese miso soup', 'https://example.com/miso.jpg', 2, 4.99),
-    ('Green Tea Ice Cream', 'Matcha-flavored ice cream', 'https://example.com/greentea.jpg', 2, 6.99);
+    ('Chicken Biryani', 'Aromatic rice with chicken', 'https://example.com/chickenbiryani.jpg', 2, 220.00),
+    ('Mutton Rogan Josh', 'Spicy mutton curry', 'https://example.com/muttonroganjosh.jpg', 2, 320.00),
+    ('Tandoori Roti', 'Whole wheat flatbread', 'https://example.com/tandooriroti.jpg', 2, 30.00),
+    ('Raita', 'Yogurt with cucumbers', 'https://example.com/raita.jpg', 2, 40.00),
+    ('Gulab Jamun', 'Sweet syrupy dessert', 'https://example.com/gulabjamun.jpg', 2, 80.00);
 
 -- Menu items for Restaurant 3
 INSERT INTO menu_item (name, description, image_link, restaurant_id, price)
 VALUES
-    ('Steak', 'Juicy ribeye steak', 'https://example.com/steak.jpg', 3, 22.99),
-    ('Seafood Platter', 'Fresh seafood medley', 'https://example.com/seafood.jpg', 3, 26.99),
-    ('Grilled Vegetables', 'Assorted grilled veggies', 'https://example.com/vegetables.jpg', 3, 9.99),
-    ('Garlic Bread', 'Warm garlic breadsticks', 'https://example.com/garlicbread.jpg', 3, 5.49),
-    ('Red Wine', 'Fine red wine', 'https://example.com/redwine.jpg', 3, 14.99);
+    ('Tandoori Chicken', 'Spicy grilled chicken', 'https://example.com/tandoorichicken.jpg', 3, 280.00),
+    ('Fish Tikka', 'Grilled fish with spices', 'https://example.com/fishtikka.jpg', 3, 350.00),
+    ('Naan', 'Soft Indian flatbread', 'https://example.com/naan.jpg', 3, 40.00),
+    ('Palak Paneer', 'Cottage cheese in spinach gravy', 'https://example.com/palakpaneer.jpg', 3, 200.00),
+    ('Mango Lassi', 'Mango-flavored yogurt drink', 'https://example.com/mangolassi.jpg', 3, 70.00);
 
 -- Menu items for Restaurant 4
 INSERT INTO menu_item (name, description, image_link, restaurant_id, price)
 VALUES
-    ('Taco', 'Spicy beef taco', 'https://example.com/taco.jpg', 4, 8.99),
-    ('Enchiladas', 'Cheesy enchiladas', 'https://example.com/enchiladas.jpg', 4, 10.99),
-    ('Burrito', 'Bean and cheese burrito', 'https://example.com/burrito.jpg', 4, 9.49),
-    ('Guacamole', 'Freshly made guacamole', 'https://example.com/guacamole.jpg', 4, 4.99),
-    ('Margarita', 'Classic margarita', 'https://example.com/margarita.jpg', 4, 7.99);
+    ('Aloo Tikki', 'Spicy potato patties', 'https://example.com/alootikki.jpg', 4, 50.00),
+    ('Pav Bhaji', 'Spicy mashed vegetables with bread', 'https://example.com/pavbhaji.jpg', 4, 120.00),
+    ('Pani Puri', 'Crispy puris filled with spicy water', 'https://example.com/panipuri.jpg', 4, 40.00),
+    ('Dahi Puri', 'Crispy puris with yogurt and chutneys', 'https://example.com/dahipuri.jpg', 4, 50.00),
+    ('Masala Chai', 'Spiced tea', 'https://example.com/masalachai.jpg', 4, 20.00);
 
 -- Menu items for Restaurant 5
 INSERT INTO menu_item (name, description, image_link, restaurant_id, price)
 VALUES
-    ('Fried Chicken', 'Crispy fried chicken', 'https://example.com/friedchicken.jpg', 5, 11.99),
-    ('Biscuits', 'Flaky biscuits with honey', 'https://example.com/biscuits.jpg', 5, 4.99),
-    ('Macaroni and Cheese', 'Creamy mac and cheese', 'https://example.com/macandcheese.jpg', 5, 8.99),
-    ('Coleslaw', 'Homemade coleslaw', 'https://example.com/coleslaw.jpg', 5, 3.99),
-    ('Sweet Tea', 'Southern-style sweet tea', 'https://example.com/sweettea.jpg', 5, 2.99);
+    ('Hyderabadi Biryani', 'Spicy and aromatic rice with meat', 'https://example.com/hyderabadibiryani.jpg', 5, 250.00),
+    ('Chicken 65', 'Spicy deep-fried chicken', 'https://example.com/chicken65.jpg', 5, 200.00),
+    ('Veg Biryani', 'Aromatic rice with mixed vegetables', 'https://example.com/vegbiryani.jpg', 5, 180.00),
+    ('Mirchi Ka Salan', 'Spicy chili curry', 'https://example.com/mirchikasalan.jpg', 5, 150.00),
+    ('Falooda', 'Sweet dessert with milk and vermicelli', 'https://example.com/falooda.jpg', 5, 100.00);
 
 
+
+select * from food.menu_item;
+
+
+DELETE FROM menu_item WHERE id = 32;
+# DELETE FROM menu_item WHERE id = 27;
+# DELETE FROM menu_item WHERE id = 28;
+# DELETE FROM menu_item WHERE id = 29;
+# DELETE FROM menu_item WHERE id = 30;
+
+
+
+# TRUNCATE TABLE menu_item;
+
+# TRUNCATE TABLE restaurant;

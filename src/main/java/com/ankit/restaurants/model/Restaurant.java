@@ -1,4 +1,4 @@
-package com.programmingwithmati.restaurants.model;
+package com.ankit.restaurants.model;
 
 import jakarta.persistence.*;
 

@@ -1,14 +1,16 @@
-package com.programmingwithmati.restaurants;
+package com.ankit.restaurants;
 
-import com.programmingwithmati.restaurants.model.MenuItem;
-import com.programmingwithmati.restaurants.model.Restaurant;
+import com.ankit.restaurants.model.MenuItem;
+import com.ankit.restaurants.model.Restaurant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigDecimal;
-import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.stream.StreamSupport;
+
+
 
 @Controller
 @RequestMapping("/restaurants")
@@ -56,5 +58,38 @@ public class RestaurantController {
     restaurant = restaurantRepository.save(restaurant);
     model.addAttribute("restaurant", restaurant);
     return "restaurant-view";
+  }
+
+
+
+  @GetMapping("/menu-item/{id}/edit")
+  public String viewEditMenuItem(@PathVariable("id") Long menuItemId, Model model) {
+    try {
+      MenuItem menuItem = findMenuItemById(menuItemId);
+      model.addAttribute("menuItem", menuItem);
+      return "edit-menu-item-view";
+    } catch (NoSuchElementException e) {
+      model.addAttribute("error", e.getMessage());
+      return "error-view";
+    }
+  }
+
+  @PostMapping("/menu-item/update")
+  public String updateMenuItem(@ModelAttribute MenuItem menuItem, Model model) {
+    Restaurant restaurant = restaurantRepository.findById(menuItem.getRestaurantId())
+            .orElseThrow(() -> new NoSuchElementException("Restaurant with ID " + menuItem.getRestaurantId() + " not found"));
+    restaurant.getMenuItems().removeIf(item -> item.getId().equals(menuItem.getId()));
+    restaurant.getMenuItems().add(menuItem);
+    restaurantRepository.save(restaurant);
+    model.addAttribute("restaurant", restaurant);
+    return "restaurant-view";
+  }
+
+  private MenuItem findMenuItemById(Long menuItemId) {
+    return StreamSupport.stream(restaurantRepository.findAll().spliterator(), false)
+            .flatMap(restaurant -> restaurant.getMenuItems().stream())
+            .filter(menuItem -> menuItem.getId().equals(menuItemId))
+            .findFirst()
+            .orElseThrow(() -> new NoSuchElementException("MenuItem with ID " + menuItemId + " not found"));
   }
 }

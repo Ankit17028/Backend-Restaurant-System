@@ -1,4 +1,4 @@
-package com.programmingwithmati.restaurants;
+package com.ankit.restaurants;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

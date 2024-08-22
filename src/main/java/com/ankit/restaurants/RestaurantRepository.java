@@ -1,6 +1,6 @@
-package com.programmingwithmati.restaurants;
+package com.ankit.restaurants;
 
-import com.programmingwithmati.restaurants.model.Restaurant;
+import com.ankit.restaurants.model.Restaurant;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.programmingwithmati.restaurants;
+package com.ankit.restaurants;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
